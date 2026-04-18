@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.test.movie_app.View.AppView">
+  <children>
+    <MenuBar fx:id="window" prefHeight="15.0" prefWidth="900.0" VBox.vgrow="NEVER" />
+    <SplitPane focusTraversable="true" prefHeight="553.0" prefWidth="743.0" VBox.vgrow="ALWAYS">
+         <items>
+            <TabPane fx:id="mainTab" prefHeight="550.0" prefWidth="379.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="movieTab" text="Movies">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="855.0">
+                           <children>
+                              <TableView fx:id="movieTable" layoutX="14.0" layoutY="58.0" prefHeight="409.0" prefWidth="284.0">
+                                <columns>
+                                  <TableColumn fx:id="idMovie" prefWidth="59.33333873748779" text="Id" />
+                                  <TableColumn fx:id="movieName" prefWidth="222.6666717529297" text="Name" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addMovieBtn" layoutX="24.0" layoutY="481.0" mnemonicParsing="false" onAction="#addMovie" prefHeight="25.0" prefWidth="75.0" text="Add" />
+                              <Button fx:id="deleteMovieBtn" layoutX="119.0" layoutY="481.0" mnemonicParsing="false" onAction="#deleteMovie" prefHeight="25.0" prefWidth="75.0" text="Delete" />
+                              <Button fx:id="modifyMovieBtn" layoutX="211.0" layoutY="481.0" mnemonicParsing="false" onAction="#modifyMovie" prefHeight="25.0" prefWidth="75.0" text="Modify" />
+                              <VBox fx:id="detailsVbox" blendMode="SRC_ATOP" layoutX="314.0" layoutY="23.0" prefHeight="489.0" prefWidth="575.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-style: solid;" AnchorPane.bottomAnchor="22.666666666666686" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="23.0">
+                                 <children>
+                                    <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER" wrappingWidth="555.4700927734375">
+                                       <font>
+                                          <Font size="27.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="directorText" strokeType="OUTSIDE" strokeWidth="0.0" text="Director" wrappingWidth="574.8033447265625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="screenwriterText" strokeType="OUTSIDE" strokeWidth="0.0" text="Screenwriter" wrappingWidth="574.8033447265625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="durationText" blendMode="LIGHTEN" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" wrappingWidth="574.8033447265625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="yearText" blendMode="LIGHTEN" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" wrappingWidth="574.8033447265625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="yearText1" blendMode="LIGHTEN" layoutX="22.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="574.8033447265625">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <HBox minHeight="-Infinity" prefHeight="350.0" prefWidth="571.0">
+                                       <children>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="227.0">
+                                             <children>
+                                                <TableView fx:id="movieActorsTable" layoutX="13.0" prefHeight="345.0" prefWidth="218.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="movieActors" prefWidth="230.0000203450521" text="actors" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="335.0">
+                                             <children>
+                                                <ImageView fx:id="image1" fitHeight="101.0" fitWidth="209.0" layoutX="79.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="image2" fitHeight="101.0" fitWidth="209.0" layoutX="77.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="image3" fitHeight="101.0" fitWidth="209.0" layoutX="75.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                              <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter after:">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="categoryFilter" layoutX="106.0" layoutY="22.0" prefHeight="25.0" prefWidth="120.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="actorTab" text="Actors">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="actorsTable" layoutX="14.0" layoutY="14.0" prefHeight="499.0" prefWidth="488.0">
+                                <columns>
+                                  <TableColumn fx:id="idActor" prefWidth="48.00000286102295" text="Id" />
+                                  <TableColumn fx:id="actorName" prefWidth="229.33332443237305" text="Name" />
+                                    <TableColumn fx:id="actorAge" prefWidth="86.66668701171875" text="Age" />
+                                    <TableColumn fx:id="actorGender" prefWidth="122.6666259765625" text="Gender" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addActorBtn" layoutX="763.0" layoutY="327.0" mnemonicParsing="false" onAction="#addActor" prefHeight="25.0" prefWidth="111.0" text="Add/Save" />
+                              <Button fx:id="deleteActorBtn" layoutX="764.0" layoutY="368.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="110.0" text="Delete" />
+                              <Button fx:id="modifyActor" layoutX="766.0" layoutY="405.0" mnemonicParsing="false" onAction="#modifyActor" prefHeight="25.0" prefWidth="108.0" text="Modify" />
+                              <Button fx:id="getMovieBtn" layoutX="767.0" layoutY="447.0" mnemonicParsing="false" onAction="#getMovies" prefHeight="25.0" prefWidth="107.0" text="Get movies list" />
+                              <TableView fx:id="actorMoviesTable" layoutX="543.0" layoutY="21.0" prefHeight="241.0" prefWidth="330.0">
+                                <columns>
+                                  <TableColumn fx:id="actorMovies" prefWidth="328.6666259765625" text="Movie list" />
+                                </columns>
+                              </TableView>
+                              <Pane fx:id="actorFormPane" blendMode="SRC_ATOP" layoutX="543.0" layoutY="301.0" prefHeight="184.0" prefWidth="200.0" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-style: solid;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="actorNameAdd" layoutX="14.0" layoutY="25.0" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="actorAgeAdd" layoutX="14.0" layoutY="79.0" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="actorGenderAdd" layoutX="13.0" layoutY="134.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="directorTab" text="Directors">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="521.0" prefWidth="685.0">
+                           <children>
+                              <TableView fx:id="directorTable" layoutX="26.0" layoutY="22.0" prefHeight="475.0" prefWidth="530.0">
+                                <columns>
+                                  <TableColumn fx:id="idDirector" prefWidth="75.0" text="Id" />
+                                  <TableColumn fx:id="directorName" prefWidth="245.3333282470703" text="Name" />
+                                    <TableColumn fx:id="directorAge" prefWidth="85.333251953125" text="Age" />
+                                    <TableColumn fx:id="directorGender" prefWidth="123.33343505859375" text="Gender" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addDirectorBtn" layoutX="782.0" layoutY="50.0" mnemonicParsing="false" onAction="#addDirector" prefHeight="33.0" prefWidth="98.0" text="Add/Save" />
+                              <Button fx:id="deleteDIrector" layoutX="782.0" layoutY="90.0" mnemonicParsing="false" onAction="#deleteDirector" prefHeight="33.0" prefWidth="98.0" text="Delete" />
+                              <Button fx:id="modifyDirectorBtn" layoutX="782.0" layoutY="132.0" mnemonicParsing="false" onAction="#modifyDirector" prefHeight="33.0" prefWidth="98.0" text="Modify" />
+                              <Pane fx:id="directorFormPane" blendMode="SRC_ATOP" layoutX="569.0" layoutY="22.0" prefHeight="184.0" prefWidth="200.0" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-style: solid;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="directorNameAdd" layoutX="14.0" layoutY="25.0" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="directorAgeAdd" layoutX="14.0" layoutY="79.0" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="directorGenderAdd" layoutX="13.0" layoutY="134.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="screenwriterTab" text="Screenwriter">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="screenwriterTable" layoutX="27.0" layoutY="25.0" prefHeight="476.0" prefWidth="527.0">
+                                <columns>
+                                  <TableColumn fx:id="idScreenwriter" prefWidth="75.0" text="Id" />
+                                  <TableColumn fx:id="screenwriterName" prefWidth="255.3333282470703" text="Name" />
+                                    <TableColumn fx:id="screenwriterAge" minWidth="0.0" prefWidth="76.6666259765625" text="Age" />
+                                    <TableColumn fx:id="screenwriterGender" prefWidth="119.33343505859375" text="Gender" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addScreenwBtn" layoutX="774.0" layoutY="50.0" mnemonicParsing="false" onAction="#addScreenwriter" prefHeight="34.0" prefWidth="107.0" text="Add/Save" />
+                              <Button fx:id="deleteScreenwBtn" layoutX="774.0" layoutY="98.0" mnemonicParsing="false" onAction="#deleteScreenwriter" prefHeight="34.0" prefWidth="107.0" text="Delete" />
+                              <Button fx:id="modifyScreenwBtn" layoutX="774.0" layoutY="148.0" mnemonicParsing="false" onAction="#modifyScreenwriter" prefHeight="34.0" prefWidth="107.0" text="Modify" />
+                              <Pane fx:id="screenwriterDemo" blendMode="SRC_ATOP" layoutX="565.0" layoutY="25.0" prefHeight="184.0" prefWidth="200.0" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-style: solid;">
+                                 <children>
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="screenwriterNameAdd" layoutX="14.0" layoutY="25.0" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="screenwriterAgeAdd" layoutX="14.0" layoutY="79.0" />
+                                    <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="189.47003173828125" />
+                                    <TextField fx:id="screenwriterGenderAdd" layoutX="13.0" layoutY="134.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

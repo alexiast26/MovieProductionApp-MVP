@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.test.movie_app.View.MovieFormView">
+   <children>
+      <SplitPane dividerPositions="0.4452423698384201" layoutX="1.0" layoutY="2.0" prefHeight="507.0" prefWidth="398.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="198.0">
+               <children>
+                  <Text layoutX="6.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="titleField" layoutX="6.0" layoutY="34.0" />
+                  <Text layoutX="6.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Director:" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="directorField" layoutX="7.0" layoutY="205.0" />
+                  <Text layoutX="6.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Screenwriter:" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="screenwriterField" layoutX="7.0" layoutY="257.0" />
+                  <Text layoutX="6.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre:" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="genraBox" layoutX="5.0" layoutY="311.0" prefWidth="150.0" />
+                  <Text layoutX="6.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="categoryBox" layoutX="6.0" layoutY="368.0" prefWidth="150.0" />
+                  <Text layoutX="6.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration:" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="durationField" layoutX="7.0" layoutY="92.0" />
+                  <Text layoutX="6.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Images(URL):" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="imgBtn" layoutX="25.0" layoutY="433.0" mnemonicParsing="false" onAction="#chooseImage" prefHeight="25.0" prefWidth="112.0" text="Choose Images" />
+                  <Text layoutX="6.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" wrappingWidth="162.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="yearField" layoutX="7.0" layoutY="149.0" />
+                  <Button fx:id="clearBtn" layoutX="25.0" layoutY="467.0" mnemonicParsing="false" onAction="#clearImages" prefHeight="25.0" prefWidth="112.0" text="Clear Images" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="273.0">
+               <children>
+                  <TabPane layoutX="1.0" prefHeight="473.0" prefWidth="225.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Add actors">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="addActorsTable" prefHeight="399.0" prefWidth="216.0">
+                                      <columns>
+                                        <TableColumn minWidth="214.0" prefWidth="214.6666820049286" resizable="false" text="Actors" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="addActorBtn" layoutX="36.0" layoutY="406.0" mnemonicParsing="false" onAction="#addActorToMovie" prefHeight="25.0" prefWidth="113.0" text="Add actor to list" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Existing actors">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="179.0">
+                                 <children>
+                                    <Button fx:id="removeActorsListBtn" layoutX="36.0" layoutY="406.0" mnemonicParsing="false" onAction="#removeActorFromList" prefHeight="25.0" prefWidth="119.0" text="Remove from list" />
+                                    <TableView fx:id="existingActorsTable" prefHeight="399.0" prefWidth="216.0">
+                                      <columns>
+                                        <TableColumn minWidth="214.0" prefWidth="226.00000508626303" resizable="false" text="Actors" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button fx:id="saveBtn" layoutX="74.0" layoutY="518.0" mnemonicParsing="false" onAction="#saveData" prefHeight="25.0" prefWidth="249.0" text="Save" />
+   </children>
+</AnchorPane>
